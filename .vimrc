@@ -1,0 +1,97 @@
+set shell=bash
+
+set t_Co=256
+nnoremap <silent> <Leader>hl :nohl<CR><C-l>
+nmap <Space>r <Plug>(quickrun)
+
+
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" git integration
+NeoBundle 'tpope/vim-fugitive'
+
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" improved c-highlighting
+NeoBundle 'https://github.com/justinmk/vim-syntax-extra'
+
+" usual suspects
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'sheerun/vim-polyglot'
+
+" Syntax checker
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'walm/jshint.vim'
+
+" Snippets
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
+
+" vim-scripts repos
+NeoBundle 'rails.vim'
+NeoBundle 'pangloss/vim-javascript'
+
+" Snippets bindings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+" Prevent conflicts between ultisnips & ycm
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+" Ignore Angular type proprietary attributes
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_javascript_checkers = ['jshint']
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+call neobundle#end()
+NeoBundleCheck
+
+
+syntax on
+filetype on
+filetype plugin indent on
+filetype plugin on
+filetype indent on
+
+map ; :
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <Leader>n :NERDTreeToggle<CR>
+
+set smartindent 
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set number
+set laststatus=2
+set ttimeoutlen=2
+
+set autoindent
+set si
+set hls
+set lbr
+set mouse=a
+

@@ -15,6 +15,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" youCompleteMe
+NeoBundle 'valloric/youcompleteme'
+
+"superTab"
+NeoBundle 'ervandew/supertab'
+
 " git integration
 NeoBundle 'tpope/vim-fugitive'
 
@@ -51,6 +57,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 " Prevent conflicts between ultisnips & ycm
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+let g:ycm_min_num_of_chars_for_completion = 2
 
 " Ignore Angular type proprietary attributes
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
@@ -94,4 +101,12 @@ set si
 set hls
 set lbr
 set mouse=a
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"

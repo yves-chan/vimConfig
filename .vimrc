@@ -17,10 +17,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " youCompleteMe
 NeoBundle 'valloric/youcompleteme'
-
-"superTab"
+"supertab
 NeoBundle 'ervandew/supertab'
-
 " git integration
 NeoBundle 'tpope/vim-fugitive'
 
@@ -101,12 +99,6 @@ set si
 set hls
 set lbr
 set mouse=a
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" split vertical screen for editting
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"

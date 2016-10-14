@@ -4,6 +4,10 @@ set t_Co=256
 nnoremap <silent> <Leader>hl :nohl<CR><C-l>
 nmap <Space>r <Plug>(quickrun)
 
+" set highlight column for 80th char "
+highlight ColorColumn ctermbg=white
+set colorcolumn=80
+
 
 if has('vim_starting')
   set nocompatible               " Be iMproved

@@ -4,9 +4,11 @@ set t_Co=256
 nnoremap <silent> <Leader>hl :nohl<CR><C-l>
 nmap <Space>r <Plug>(quickrun)
 
-" set highlight column for 80th char "
 highlight ColorColumn ctermbg=white
 set colorcolumn=80
+
+"Search and replace under cursor"
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 
 
 if has('vim_starting')

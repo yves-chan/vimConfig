@@ -4,7 +4,7 @@ set t_Co=256
 nnoremap <silent> <Leader>hl :nohl<CR><C-l>
 nmap <Space>r <Plug>(quickrun)
 
-highlight ColorColumn ctermbg=white
+highlight ColorColumn ctermbg=blue
 set colorcolumn=80
 
 "Search and replace under cursor"

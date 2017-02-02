@@ -41,6 +41,9 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sheerun/vim-polyglot'
 
+" vim-go
+NeoBundle 'fatih/vim-go'
+
 " Syntax checker
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'walm/jshint.vim'
@@ -80,10 +83,7 @@ NeoBundleCheck
 
 
 syntax on
-filetype on
 filetype plugin indent on
-filetype plugin on
-filetype indent on
 
 map ; :
 map <C-h> <C-w>h

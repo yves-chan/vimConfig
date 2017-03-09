@@ -56,6 +56,11 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'rails.vim'
 NeoBundle 'pangloss/vim-javascript'
 
+call neobundle#end()
+NeoBundleCheck
+
+execute pathogen#infect()
+
 " Snippets bindings
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
@@ -78,8 +83,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-call neobundle#end()
-NeoBundleCheck
 
 
 syntax on

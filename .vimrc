@@ -1,4 +1,5 @@
 set shell=bash
+set backspace=indent,eol,start
 
 set t_Co=256
 nnoremap <silent> <Leader>hl :nohl<CR><C-l>
@@ -58,8 +59,6 @@ NeoBundle 'pangloss/vim-javascript'
 
 call neobundle#end()
 NeoBundleCheck
-
-execute pathogen#infect()
 
 " Snippets bindings
 let g:UltiSnipsExpandTrigger="<tab>"

@@ -57,11 +57,10 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'rails.vim'
 NeoBundle 'pangloss/vim-javascript'
 
-"vim jsx
-NeoBundle 'mxw/vim-jsx'
-
 call neobundle#end()
 NeoBundleCheck
+
+execute pathogen#infect()
 
 " Snippets bindings
 let g:UltiSnipsExpandTrigger="<tab>"

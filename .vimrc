@@ -56,6 +56,9 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'rails.vim'
 NeoBundle 'pangloss/vim-javascript'
 
+"vim jsx
+NeoBundle 'mxw/vim-jsx'
+
 call neobundle#end()
 NeoBundleCheck
 
@@ -111,3 +114,6 @@ set mouse=a
 " split vertical screen for editting
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
+
+" allow vim-jsx to recognize js files
+let g:jsx_ext_required=0

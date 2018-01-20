@@ -175,6 +175,15 @@ quickrun#is_running()				*quickrun#is_running()*
 	Checks any session is running.  Returns non-zero when running.
 
 
+The following functions are deprecated.  These will be removed at next
+version.
+quickrun#register_module({kind}, {name}, {module})
+quickrun#register_runner({name}, {runner})
+quickrun#register_outputter({name}, {outputter})
+quickrun#register_hook({name}, {hook})
+quickrun#get_module({kind} [, {name}])
+
+
 ------------------------------------------------------------------------------
 KEY MAPPINGS					*quickrun-key-mappings*
 
@@ -495,17 +504,6 @@ default.  NOTE: Everything except for "system" can be unstable.
   Runs by |python| thread asynchronously.
   WARNING: This is absolutely unstable.
   WARNING: Don't use this on X11.  Vim crashes.
-
-- "runner/job"				*quickrun-module-runner/job*
-  {Experimental}
-  {Requirement: |+job|}
-  Runs via |job| feature.
-  Option ~
-  runner/job/interval		Default: 0
-	job feature checks about every 10 seconds for jobs that ended
-	(|job-exit_cb|).
-	When this value is not 0, this checks the end of job every specified
-	time in milliseconds by |timer|.
 
 - "runner/vimscript"			*quickrun-module-runner/vimscript*
   Runs commands as Vim commands.

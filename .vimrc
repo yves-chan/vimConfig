@@ -56,8 +56,10 @@ NeoBundle 'SirVer/ultisnips'
 " vim-scripts repos
 NeoBundle 'rails.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'maxmellon/vim-jsx-pretty'
 
-call neobundle#end()
+
+cal neobundle#end()
 NeoBundleCheck
 
 execute pathogen#infect()
@@ -84,10 +86,16 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" split vertical screen for editting
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
 
+" allow vim-jsx to recognize js files
+let g:jsx_ext_required=1
 
-syntax on
+filetype plugin off
 filetype plugin indent on
+syntax on
 
 map ; :
 map <C-h> <C-w>h
@@ -96,7 +104,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <Leader>n :NERDTreeToggle<CR>
 
-set smartindent 
+set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -109,9 +117,3 @@ set si
 set hls
 set lbr
 set mouse=a
-" split vertical screen for editting
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips/"
-
-" allow vim-jsx to recognize js files
-let g:jsx_ext_required=0
